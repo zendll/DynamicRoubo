@@ -96,7 +96,7 @@ static stock Roubo_Deletar(index) {
         return false;
   
     DestroyDynamic3DTextLabel(e_Roubo[index][E_ROUBO_TEXTLABEL]);
-    DestroyPickup(e_Roubo[index][E_ROUBO_NOME]);
+    DestroyDynamicPickup(e_Roubo[index][E_ROUBO_NOME]);
 
     mysql_format(Conexao, query, sizeof(query), "DELETE FROM locais_roubo WHERE ID = %d", e_Roubo[index][E_ROUBO_DB_ID]);
     mysql_query(Conexao, query);
@@ -109,7 +109,7 @@ static stock Roubo_DeletarInfo(index) {
         return false;
 
     DestroyDynamic3DTextLabel(e_Roubo[index][E_ROUBO_TEXTLABEL]);
-    DestroyPickup(e_Roubo[index][E_ROUBO_PICKUP]);
+    DestroyDynamicPickup(e_Roubo[index][E_ROUBO_PICKUP]);
     return true;
 }
 
