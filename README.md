@@ -22,15 +22,15 @@ Este sistema implementa um sistema de gerenciamento de locais de roubo em um ser
 
 1. Clone o repositório:
 
-#Contato
-  discord <https://discord.gg/bjQPJcs8XE>
-  Privado yo.zenyx
+## Contato
+  discord <https://discord.gg/bjQPJcs8XE><br>
+  Privado yo.zenyx<br>
 
 ## Nescessario Blibiotecas
 
-  EasyDialog <https://github.com/Awsomedude/easyDialog>
-  YSI <https://github.com/pawn-lang/YSI-Includes>
-  MySQL <https://github.com/pBlueG/SA-MP-MySQL/releases>
+  EasyDialog <https://github.com/Awsomedude/easyDialog><br>
+  YSI <https://github.com/pawn-lang/YSI-Includes><br>
+  MySQL <https://github.com/pBlueG/SA-MP-MySQL/releases><br>
   
 ```bash
 git clone https://github.com/seu-usuario/sistema-roubos.git
