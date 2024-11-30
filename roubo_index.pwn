@@ -109,7 +109,7 @@ static stock Roubo_DeletarInfo(index) {
         return false;
 
     DestroyDynamic3DTextLabel(e_Roubo[index][E_ROUBO_TEXTLABEL]);
-    DestroyDynamicPickup(e_Roubo[index][E_ROUBO_PICKUP]);
+    DestroyPickup(e_Roubo[index][E_ROUBO_PICKUP]);
     return true;
 }
 
