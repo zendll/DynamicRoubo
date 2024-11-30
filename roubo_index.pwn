@@ -179,17 +179,20 @@ CMD:criarroubo(playerid, params[]) {
     SendClientMessage(playerid, -1, "Não há mais espaço para novos locais de roubo!");
     return 1;
 }
-CMD:roubar(playerid, params[]) {
-
+CMD:roubar(playerid, params[]) //corrigido fix de falar que nao esta proximo
+{
     new Float:x, 
-        Float:y,
+        Float:y, 
         Float:z, 
         index = -1;
 
     GetPlayerPos(playerid, x, y, z);
 
-    for (new i = 0; i < MAX_ROUBOS; i++) {
-        if (e_Roubo[i][E_ROUBO_NOME][0] != '\0') { 
+    for (new i = 0; /*1*/ i < MAX_ROUBOS; i++)  {
+
+        if (i == 0) continue;
+
+        if (e_Roubo[i][E_ROUBO_NOME][0] != '\0') {
             if (Roubo_ObterPosicao(i, x, y, z) && IsPlayerInRangeOfPoint(playerid, 5.0, x, y, z)) {
                 index = i;
                 break;
@@ -198,13 +201,9 @@ CMD:roubar(playerid, params[]) {
     }
 
     if (index != -1) {
-
-        new dinheiroRoubo = e_Roubo[index][E_ROUBO_DINHEIRO];
-
-        Roubo_AtualizarLocal(index, 0);  
-
+        new dinheiroRoubo = Roubo_ObterDinheiro(index);
+        Roubo_AtualizarLocal(index, 0);
         GivePlayerMoney(playerid, dinheiroRoubo);
-
         SendClientMessage(playerid, -1, va_return("Você roubou R$%d do cofre!", dinheiroRoubo));
     } else {
         SendClientMessage(playerid, -1, "Nenhum cofre encontrado nas proximidades!");
@@ -212,6 +211,7 @@ CMD:roubar(playerid, params[]) {
 
     return 1;
 }
+
 
 CMD:gerenciarroubo(playerid) {
 
